@@ -1,0 +1,428 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  background: #f6f8fb;
+  color: #202634;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===================== NAVBAR ===================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 44px;
+  background: #ffffff;
+  border-bottom: 1px solid #e8ecf2;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar h2 {
+  font-size: 19px;
+  font-weight: 800;
+  color: #131826;
+  letter-spacing: -0.3px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar h2::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: #14b8a6;
+  display: inline-block;
+}
+
+.navbar div {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.navbar a {
+  color: #5b6472;
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.15s ease;
+}
+
+.navbar a:hover {
+  color: #131826;
+  background: #f1f4f8;
+}
+
+.navbar button {
+  padding: 8px 18px;
+  background: #131826;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 6px;
+  transition: background 0.15s ease;
+}
+
+.navbar button:hover {
+  background: #dc2626;
+}
+
+/* ===================== CONTAINER ===================== */
+.container {
+  max-width: 1080px;
+  margin: 36px auto;
+  padding: 0 24px 60px;
+}
+
+h1 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #131826;
+  letter-spacing: -0.5px;
+  margin: 32px 0 6px;
+}
+
+h2 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #131826;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* ===================== TAB BAR ===================== */
+.tab-bar {
+  display: flex;
+  gap: 4px;
+  margin: 24px 0 28px;
+  border-bottom: 2px solid #e8ecf2;
+}
+
+.tab {
+  padding: 12px 22px;
+  border: none;
+  background: transparent;
+  color: #8892a0;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.15s ease;
+}
+
+.tab:hover {
+  color: #131826;
+}
+
+.tab.active {
+  color: #14b8a6;
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #14b8a6;
+  border-radius: 2px;
+}
+
+.tab-section {
+  animation: fadeUp 0.3s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================== FORMS ===================== */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+  padding: 22px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e8ecf2;
+}
+
+form input,
+form select,
+form textarea {
+  flex: 1 1 200px;
+  padding: 11px 14px;
+  border: 1px solid #dde3ea;
+  border-radius: 9px;
+  font-size: 13.5px;
+  font-family: inherit;
+  background: #fbfcfe;
+  color: #202634;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border-color: #14b8a6;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.12);
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #a3abb8;
+}
+
+form textarea {
+  flex: 1 1 100%;
+  min-height: 76px;
+  resize: vertical;
+}
+
+form select {
+  cursor: pointer;
+}
+
+form button {
+  padding: 11px 26px;
+  background: #131826;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+form button:hover {
+  background: #14b8a6;
+}
+
+form button[type="button"] {
+  background: #eef1f5;
+  color: #5b6472;
+}
+
+form button[type="button"]:hover {
+  background: #e2e6ec;
+}
+
+/* ===================== CARD GRID ===================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.card-grid > div {
+  background: #ffffff;
+  border: 1px solid #e8ecf2;
+  border-radius: 14px;
+  padding: 18px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card-grid > div:hover {
+  border-color: #14b8a6;
+  box-shadow: 0 4px 16px rgba(20, 184, 166, 0.1);
+}
+
+.card-grid img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 2px solid #f1f4f8;
+}
+
+.card-grid p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #5b6472;
+  margin: 1px 0;
+}
+
+.card-grid p:first-of-type {
+  font-weight: 700;
+  color: #131826;
+  font-size: 14.5px;
+  margin-bottom: 2px;
+}
+
+.card-grid ul {
+  margin: 8px 0 4px 18px;
+}
+
+.card-grid li {
+  font-size: 12.5px;
+  color: #5b6472;
+  padding: 2px 0;
+}
+
+.card-grid > div > div:last-child {
+  margin-top: 12px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.card-grid button {
+  padding: 7px 14px;
+  border: none;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.card-grid button:hover {
+  opacity: 0.85;
+}
+
+.card-grid button:first-child {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.card-grid button:nth-child(2) {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.card-grid button:nth-child(3) {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.card-grid button:nth-child(4) {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+/* ===================== MODAL ===================== */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(19, 24, 38, 0.55);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: fadeUp 0.2s ease;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 32px;
+  border-radius: 18px;
+  max-width: 380px;
+  width: 90%;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  text-align: left;
+}
+
+.modal-box img {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f1f4f8;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.modal-box h2 {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 19px;
+  margin-bottom: 12px;
+}
+
+.modal-box p {
+  font-size: 13.5px;
+  color: #5b6472;
+  margin: 6px 0;
+}
+
+.modal-box button {
+  margin-top: 18px;
+  padding: 10px 24px;
+  background: #131826;
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  font-weight: 600;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.modal-box button:hover {
+  background: #14b8a6;
+}
+
+/* ===================== STATUS TAGS ===================== */
+.status-pending,
+.status-confirmed,
+.status-completed,
+.status-cancelled {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.status-pending { background: #fef3c7; color: #b45309; }
+.status-confirmed { background: #dbeafe; color: #1d4ed8; }
+.status-completed { background: #dcfce7; color: #15803d; }
+.status-cancelled { background: #fee2e2; color: #b91c1c; }
+
+/* ===================== SCROLLBAR ===================== */
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: #f1f4f8; }
+::-webkit-scrollbar-thumb { background: #cfd6df; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #a3abb8; }
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  .container { padding: 0 16px 40px; }
+  .navbar { flex-direction: column; gap: 12px; padding: 14px 20px; }
+  .navbar div { flex-wrap: wrap; justify-content: center; }
+  form { flex-direction: column; padding: 18px; }
+  form input, form select, form textarea { flex: 1 1 100%; }
+  .tab-bar { overflow-x: auto; }
+  .card-grid { grid-template-columns: 1fr; }
+  h1 { font-size: 22px; }
+}
