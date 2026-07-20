@@ -1,4 +1,4 @@
-const backendapiurl="https://full-stack-project-1-97bx.onrender.com/api";
+const backendapiurl="https://full-stack-project-2-yakd.onrender.com/api";
 
 export const signupapi=`${backendapiurl}/Auth/signup`;
 export const loginapi=`${backendapiurl}/Auth/login`;
